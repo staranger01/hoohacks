@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 
 // if (process.env.NODE_ENV == "PRODUCTION") {
+app.use(express.static("client/build"));
 app.get("*", (req, res) => {
   const path = require("path");
   res.sendFile(path.join(__dirname, "client/build/index.html"));
