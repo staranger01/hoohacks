@@ -1,9 +1,10 @@
 import React from "react";
+import Typography from "@material-ui/core/Typography";
 
 function App() {
   return (
     <div className="App">
-      <h1>app component</h1>
+      <Typography variant="h1">corOHNO</Typography>
     </div>
   );
 }
