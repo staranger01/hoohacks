@@ -1,0 +1,11 @@
+path = "C:\Users\user  1\OneDrive - University of North Carolina at Pembroke\AA_HooHacks\Sentiment\HooHacks-d4edc7bc93e1.json"
+
+$env:GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
+$env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\username\Downloads\[FILE_NAME].json"
+
+with powershell
+$env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\user  1\OneDrive - University of North Carolina at Pembroke\AA_HooHacks\Sentiment\HooHacks-d4edc7bc93e1.json"
+$env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\username\Downloads\HooHacks-d4edc7bc93e1.json"
+
+with command
+
