@@ -16,8 +16,21 @@ function NavButton(props) {
   function handleClose() {
     setAnchorEl(null);
   }
+  function renderNavItems(navItems) {
+    return navItems.map(title => (
+      <ScrollLink
+        activeClass={classes.spiedOn}
+        spy={true}
+        smooth={true}
+        duration={500}
+        to={`${title}`}
+      >
+        <MenuItem onClick={handleClose}>{`${title}`}</MenuItem>
+      </ScrollLink>
+    ));
+  }
   return (
-    <div>
+    <div className={classes.size1}>
       <IconButton onClick={handleOpen}>
         <MenuIcon />
       </IconButton>
@@ -29,42 +42,7 @@ function NavButton(props) {
         onClose={handleClose}
       >
         <MenuItem onClick={handleClose}>X</MenuItem>
-        <ScrollLink
-          activeClass={classes.spiedOn}
-          spy={true}
-          smooth={true}
-          duration={500}
-          to="section1"
-        >
-          <MenuItem onClick={handleClose}>Section 1</MenuItem>
-        </ScrollLink>
-        <ScrollLink
-          activeClass={classes.spiedOn}
-          spy={true}
-          smooth={true}
-          duration={500}
-          to="section2"
-        >
-          <MenuItem onClick={handleClose}>Section 2</MenuItem>
-        </ScrollLink>
-        <ScrollLink
-          activeClass={classes.spiedOn}
-          spy={true}
-          smooth={true}
-          duration={500}
-          to="section3"
-        >
-          <MenuItem onClick={handleClose}>Section 3</MenuItem>
-        </ScrollLink>
-        <ScrollLink
-          activeClass={classes.spiedOn}
-          spy={true}
-          smooth={true}
-          duration={500}
-          to="section4"
-        >
-          <MenuItem onClick={handleClose}>Section 4</MenuItem>
-        </ScrollLink>
+        {renderNavItems(props.navItems)}
       </Menu>
     </div>
   );

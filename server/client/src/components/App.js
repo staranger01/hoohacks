@@ -22,7 +22,7 @@ const ScrollLink = Scroll.Link;
 
 function App(props) {
   const { classes } = props;
-  const navItems = ["section 1", "section 2", "section 3", "section 4"];
+  const navItems = ["CorOHNO!", "About", "section 2", "section 3", "section 4"];
 
   function renderNavItems(navItems) {
     return navItems.map(title => (
@@ -32,7 +32,7 @@ function App(props) {
         smooth={true}
         duration={500}
         to={`${title}`}
-        className={classes.upSm}
+        className={classes.size2}
       >
         <Typography variant="h5">
           <span className={classes.navItem}>{`${title}`}</span>
@@ -55,7 +55,7 @@ function App(props) {
           <HideOnScroll>
             <AppBar position="sticky">
               <Toolbar>
-                <NavButton className={classes.betweenXsSm} />
+                <NavButton className={classes.upSm} navItems={navItems} />
                 {renderNavItems(navItems)}
               </Toolbar>
             </AppBar>

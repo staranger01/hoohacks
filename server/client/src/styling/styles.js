@@ -7,13 +7,13 @@ const styles = {
   navItem: {
     margin: "0 20px"
   },
-  betweenXsSm: {
-    [theme.breakpoints.up("sm")]: {
+  size1: {
+    [theme.breakpoints.up("md")]: {
       display: "none"
     }
   },
-  upSm: {
-    [theme.breakpoints.between("xs", "sm")]: {
+  size2: {
+    [theme.breakpoints.down("sm")]: {
       display: "none"
     }
   }
