@@ -16,6 +16,9 @@ const styles = {
     [theme.breakpoints.down("sm")]: {
       display: "none"
     }
+  },
+  appBarItem: {
+    margin: "0 20px"
   }
 };
 

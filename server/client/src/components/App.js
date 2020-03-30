@@ -18,57 +18,25 @@ import Scroll, { Element } from "react-scroll";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "../styling/styles";
 import HideOnScroll from "../styling/HideOnScroll";
+import Landing from "./Landing";
+import About from "./About";
+import MyAppBar from "./MyAppBar";
 const ScrollLink = Scroll.Link;
 
 function App(props) {
   const { classes } = props;
-  const navItems = ["CorOHNO!", "About", "section 2", "section 3", "section 4"];
 
-  function renderNavItems(navItems) {
-    return navItems.map(title => (
-      <ScrollLink
-        activeClass={classes.spiedOn}
-        spy={true}
-        smooth={true}
-        duration={500}
-        to={`${title}`}
-        className={classes.size2}
-      >
-        <Typography variant="h5">
-          <span className={classes.navItem}>{`${title}`}</span>
-        </Typography>
-      </ScrollLink>
-    ));
-  }
-
-  function renderSections(navItems) {
-    return navItems.map(title => (
-      <Element id={`${title}`}>
-        <Filler title={`${title}`} />
-      </Element>
-    ));
-  }
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Container>
-          <HideOnScroll>
-            <AppBar position="sticky">
-              <Toolbar>
-                <NavButton className={classes.upSm} navItems={navItems} />
-                {renderNavItems(navItems)}
-              </Toolbar>
-            </AppBar>
-          </HideOnScroll>
+          <MyAppBar />
 
           <Route exact path="/">
-            {renderSections(navItems)}
+            <Landing />
           </Route>
-          <Route exact path="/1">
-            <h1>page1</h1>
-          </Route>
-          <Route exact path="/2">
-            <h1>page2</h1>
+          <Route exact path="/about">
+            <About />
           </Route>
         </Container>
       </BrowserRouter>

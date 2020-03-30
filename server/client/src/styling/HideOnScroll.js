@@ -1,5 +1,6 @@
 import React from "react";
 import { useScrollTrigger, Slide } from "@material-ui/core";
+import theme from "./theme";
 
 export default function HideOnScroll(props) {
   const { children, window } = props;

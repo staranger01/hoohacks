@@ -3,6 +3,7 @@ import { Menu, IconButton, MenuItem } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "../styling/styles";
+import { Link } from "react-router-dom";
 import Scroll, { Element } from "react-scroll";
 const ScrollLink = Scroll.Link;
 
@@ -16,7 +17,15 @@ function NavButton(props) {
   function handleClose() {
     setAnchorEl(null);
   }
+
   function renderNavItems(navItems) {
+    return navItems.map(item => (
+      <Link to={`/${item}`}>
+        <MenuItem onClick={handleClose}>{`${item}`}</MenuItem>
+      </Link>
+    ));
+  }
+  function renderSideBarItems(navItems) {
     return navItems.map(title => (
       <ScrollLink
         activeClass={classes.spiedOn}
